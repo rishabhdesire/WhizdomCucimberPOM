@@ -20,15 +20,16 @@
 Feature: Car Trading
   I want to buy car and sell cars
 
-  @Buy
+  @BuyCar
   Scenario: Buying a car
     Given I go to buy a car
-    And car must be of ford motors
-    When I look at cars
-    And some other action
-    And yet another action
-    Then I validate the outcomes
-    And check more outcomes
+    And car must be of 'BMW'
+    And car must be white in color
+    When I search for cars
+    And I selct city as Tokyo
+    Then I should get white cars in result
+    And car must be atleast 5 years old
+    But car should be be damaged
 
   @tag2
   Scenario Outline: Title of your scenario outline
