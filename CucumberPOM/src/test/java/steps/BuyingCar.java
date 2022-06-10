@@ -11,7 +11,7 @@ public class BuyingCar {
 		
 	}
 	
-	@When ("I look at cars")
+	@When ("I look at car")
 	public void look()
 	{
 		
