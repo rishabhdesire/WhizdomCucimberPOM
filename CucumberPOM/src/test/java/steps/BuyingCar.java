@@ -1,7 +1,7 @@
 package steps;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
 
 public class BuyingCar {
 	
@@ -11,8 +11,8 @@ public class BuyingCar {
 		
 	}
 	
-	@And ("car must be of ford motors")
-	public void buyand()
+	@When ("I look at cars")
+	public void look()
 	{
 		
 	}
