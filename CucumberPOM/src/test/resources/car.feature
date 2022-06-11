@@ -21,23 +21,34 @@ Feature: Car Trading
   I want to buy car and sell cars
 
   @BuyCar
-  Scenario: Buying a car
+  Scenario Outline: Buying a car
     Given I go to buy a car
+    And run on '<Browser>' with this '<Env>'
     And car must be of 'BMW'
-    And car must be white in color
+    And car can be white,black,green in color
+    And address is 872,street x, Delhi, India
     When I search for cars
     And I selct city as Tokyo
     Then I should get white cars in result
     And car must be atleast 5 years old
+    And car should have all the links
+      | Links | Title | Group |
+      | Home  | XYZ   | <Env> |
+      | World | ABC   | B     |
     But car should be be damaged
 
-  @tag2
-  Scenario Outline: Title of your scenario outline
-    Given I want to write a step with <name>
-    When I check for the <value> in step
-    Then I verify the <status> in step
-
-    Examples: 
-      | name  | value | status  |
-      | name1 |     5 | success |
-      | name2 |     7 | Fail    |
+    Examples: Running on different Browser and environment
+      | Browser | Env   |
+      | chrome  | QA1   |
+      | firefox | Prod1 |
+      | ie      | Dev1  |
+  #@tag2
+  #Scenario Outline: Title of your scenario outline
+    #Given I want to write a step with <name>
+    #When I check for the <value> in step
+    #Then I verify the <status> in step
+#
+    #Examples: 
+      #| name  | value | status  |
+      #| name1 |     5 | success |
+      #| name2 |     7 | Fail    |

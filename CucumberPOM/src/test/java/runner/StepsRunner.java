@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
 		features = "src/test/resources/",
-		glue = "steps",
+		glue = {"search","select"},
 		plugin = {"html:target/cucumber-reports.html",
 				"rerun:rerun/failed_scenarios.txt"}, //pretty,progress,html.json,rerun,junit
 		monochrome = true,
